@@ -48,6 +48,7 @@ Moreover, add a settings.py file to the repo, containing the data paths and so f
 settings = {
     "model_path": "/path/to/the/state/dict/model.sd",
     "data_path": "path/for/saving/results",
+    "ADNI_DIR": "path/to/ADNI/data",
     "1.5T_table": "path/to/ADNI/table1.5T",
     "1.5T_image_dir": "path/to/ADNI/table1.5T",
     "3T_table": "path/to/ADNI/table3T",
