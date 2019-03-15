@@ -43,7 +43,7 @@ The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Ini
 In order to run the code, standard pytorch packages and Python 3 are needed. 
 Moreover, add a settings.py file to the repo, containing the data paths and so forth as follows:
 
-''' 
+```
 
 settings = {
     "model_path": "/path/to/the/state/dict/model.sd",
@@ -51,7 +51,7 @@ settings = {
     "nmm_mask_path": "/path/to/labels_Neuromorphometrics.nii"
 }
 
-'''
+```
 
 
 ## Citation
