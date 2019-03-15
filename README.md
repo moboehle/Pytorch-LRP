@@ -56,6 +56,6 @@ settings = {
 
 ## Citation
 
-If you use our code, please cite us. 
+If you use our code, please cite us. The code is published under the BSD License 2.0.
 
   
