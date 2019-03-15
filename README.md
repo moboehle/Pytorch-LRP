@@ -48,6 +48,10 @@ Moreover, add a settings.py file to the repo, containing the data paths and so f
 settings = {
     "model_path": "/path/to/the/state/dict/model.sd",
     "data_path": "path/for/saving/results",
+    "1.5T_table": "path/to/ADNI/table1.5T",
+    "1.5T_image_dir": "path/to/ADNI/table1.5T",
+    "3T_table": "path/to/ADNI/table3T",
+    "3T_image_dir": "path/to/ADNI/table3T",
     "binary_brain_mask": "path/to/binary/brain/mask",
     "nmm_mask_path": "/path/to/labels_Neuromorphometrics.nii"
 }
