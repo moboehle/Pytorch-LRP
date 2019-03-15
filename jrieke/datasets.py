@@ -4,6 +4,8 @@ import os
 from jrieke import utils
 from tqdm import tqdm_notebook
 import multiprocessing
+from settings import settings
+
 
 import torch
 from torch.utils.data import Dataset, DataLoader
@@ -11,19 +13,17 @@ from torch.utils.data import Dataset, DataLoader
 from tabulate import tabulate
 
 # Binary brain mask used to cut out the skull.
-mask = utils.load_nifti('/home/moritzb/binary_brain_mask.nii.gz')
+mask = utils.load_nifti(settings["binary_brain_mask"])
 
 # ------------------------- ADNI data tables -----------------------------------
 
 # Ritter/Haynes lab file system at BCCN Berlin.
-ADNI_DIR = '/analysis/ritter/data/ADNI'
+ADNI_DIR = settings["ADNI_DIR"]
 
-# Local.
-# ADNI_DIR = 'data/ADNI'
 
 # Filepaths for 3 Tesla scans.
-table_3T = os.path.join(ADNI_DIR, 'ADNI_tables/customized/DxByImgClean_CompleteAnnual2YearVisitList_3T.csv')
-image_dir_3T = os.path.join(ADNI_DIR, 'ADNI_2Yr_3T_preprocessed')
+table_3T = os.path.join(ADNI_DIR, settings["3T_table"])
+image_dir_3T = os.path.join(ADNI_DIR, settings["3T_image_dir"])
 corrupt_images_3T = ['037_S_0501/Baseline', '037_S_0501/Month12', '037_S_0501/Month24', '051_S_1123/Baseline',
                      '051_S_1123/Month12', '051_S_1123/Month24', '116_S_0649/Month12', '116_S_0649/Month24',
                      '116_S_1232/Baseline', '027_S_1387/Baseline', '027_S_1387/Month12', '027_S_1387/Month24',
@@ -33,8 +33,8 @@ corrupt_images_3T = ['037_S_0501/Baseline', '037_S_0501/Month12', '037_S_0501/Mo
                      '005_S_0572/Month12', '005_S_0572/Month24']
 
 # Filepaths for 1.5 Tesla scans.
-table_15T = os.path.join(ADNI_DIR, 'ADNI_tables/customized/DxByImgClean_CompleteAnnual2YearVisitList_1_5T.csv')
-image_dir_15T = os.path.join(ADNI_DIR, 'ADNI_2Yr_15T_quick_preprocessed')
+table_15T = os.path.join(ADNI_DIR, settings["1.5T_table"])
+image_dir_15T = os.path.join(ADNI_DIR, settings["1.5T_image_dir"])
 corrupt_images_15T = ['067_S_0077/Screening']
 
 
