@@ -24,7 +24,6 @@ class Net(nn.Module):
         x = self.relu(self.max_pool2(self.conv2_drop(self.conv2(x))))
         x = x.view(-1, 320)
         x = self.relu(self.fc1(x))
-        self.conv2_drop.train(self.training)
         x = self.conv2_drop(x)
         x = self.fc2(x)
         return self.softmax(x)
