@@ -20,16 +20,17 @@ You can use the visualization methods in this repository on your own model (PyTo
                                   beta=.5)
     model_prediction, heatmap = inn_model.innvestigate(in_tensor=data)
     
-`heatmap` contains the relevance heatmap. The methods should work for 2D and 3D images alike, see the MNIST example notebook.
+`heatmap` contains the relevance heatmap. The methods should work for 2D and 3D images alike, see the MNIST example notebook or the LRP and GB evaluation notebook for an example with MRI images.
     
 
 ## Code Structure
 
-Coming soon.
+The repository consists of the general LRP wrapper (innvestigator.py and inverter_util.py), a simple example for applying the wrapper in the case of MNIST data, and the evaluation notebook for obtaining the heatmap results discussed in the article. 
 
 ## Trained Model and Heatmaps
 
-Coming soon.
+The trained model has been made available by Johannes Rieke, see https://github.com/jrieke/cnn-interpretability. 
+The methods for obtaining the heatmaps are shown in the notebook **Evaluate GB and LRP**
 
 ## Data
 
@@ -39,7 +40,18 @@ The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Ini
 
 ## Requirements
 
-Coming soon.
+In order to run the code, standard pytorch packages and Python 3 are needed. 
+Moreover, add a settings.py file to the repo, containing the data paths and so forth as follows:
+
+''' 
+
+settings = {
+    "model_path": "/path/to/the/state/dict/model.sd",
+    "data_path": "path/for/saving/results",
+    "nmm_mask_path": "/path/to/labels_Neuromorphometrics.nii"
+}
+
+'''
 
 
 ## Citation
