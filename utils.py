@@ -1,7 +1,7 @@
 import torch
 from scipy.ndimage import zoom
 from sklearn.model_selection import train_test_split
-import innvestigate.jrieke.datasets as datasets
+import jrieke.datasets as datasets
 import numpy as np
 
 
