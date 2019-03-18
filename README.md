@@ -57,6 +57,10 @@ settings = {
     "nmm_mask_path": "/path/to/labels_Neuromorphometrics.nii"
 }
 
+With the "Evaluate GB and LRP" notebook, the heatmap results and the summed scores per area can be calculated.
+The notebooks "Plotting result graphs" and "Plotting brain maps" can be used to calculate and plot the results according to the defined metrics and show the heatmaps of individual patient's brains and average heatmaps according to LRP and GB.
+
+
 ```
 
 
