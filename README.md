@@ -34,7 +34,7 @@ The methods for obtaining the heatmaps are shown in the notebook **Evaluate GB a
 
 ## Data
 
-The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Initiative (ADNI)](http://adni.loni.usc.edu/). The data is free but you need to apply for access on http://adni.loni.usc.edu/. Once you have an account, go [here](http://adni.loni.usc.edu/data-samples/access-data/) and log in. 
+The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Initiative (ADNI)](http://adni.loni.usc.edu/). The data is free but you need to apply for access on http://adni.loni.usc.edu/. Once you have an account, go [here](http://adni.loni.usc.edu/data-samples/access-data/) and log in. Settings.py gives information about the required data format.
 
 
 
@@ -58,11 +58,13 @@ settings = {
     "nmm_mask_path_scaled": "nmm_mask_rescaled.nii"
 }
 
+
+```
+
 With the "Evaluate GB and LRP" notebook, the heatmap results and the summed scores per area can be calculated.
 The notebooks "Plotting result graphs" and "Plotting brain maps" can be used to calculate and plot the results according to the defined metrics and show the heatmaps of individual patient's brains and average heatmaps according to LRP and GB.
 
 
-```
 
 
 ## Citation
