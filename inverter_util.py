@@ -39,7 +39,8 @@ class RelevancePropagator:
                            torch.nn.Dropout, torch.nn.Dropout2d,
                            torch.nn.Dropout3d,
                            torch.nn.Softmax,
-                           torch.nn.LogSoftmax)
+                           torch.nn.LogSoftmax,
+                           torch.nn.Sigmoid)
     # Implemented rules for relevance propagation.
     available_methods = ["e-rule", "b-rule"]
 

@@ -34,7 +34,7 @@ The methods for obtaining the heatmaps are shown in the notebook **Evaluate GB a
 
 ## Data
 
-The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Initiative (ADNI)](http://adni.loni.usc.edu/). The data is free but you need to apply for access on http://adni.loni.usc.edu/. Once you have an account, go [here](http://adni.loni.usc.edu/data-samples/access-data/) and log in. 
+The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Initiative (ADNI)](http://adni.loni.usc.edu/). The data is free but you need to apply for access on http://adni.loni.usc.edu/. Once you have an account, go [here](http://adni.loni.usc.edu/data-samples/access-data/) and log in. Settings.py gives information about the required data format.
 
 
 
@@ -44,24 +44,27 @@ In order to run the code, standard pytorch packages and Python 3 are needed.
 Moreover, add a settings.py file to the repo, containing the data paths and so forth as follows:
 
 ```
+Please use the example settings.py with more information.
 
 settings = {
-    "model_path": "/path/to/the/state/dict/model.sd",
-    "data_path": "path/for/saving/results",
-    "ADNI_DIR": "path/to/ADNI/data",
-    "1.5T_table": "path/to/ADNI/table1.5T",
-    "1.5T_image_dir": "path/to/ADNI/table1.5T",
-    "3T_table": "path/to/ADNI/table3T",
-    "3T_image_dir": "path/to/ADNI/table3T",
-    "binary_brain_mask": "path/to/binary/brain/mask",
-    "nmm_mask_path": "/path/to/labels_Neuromorphometrics.nii"
+    "model_path": INSERT, 
+    "data_path": INSERT,
+    "ADNI_DIR": INSERT,
+    "train_h5": INSERT,
+    "val_h5": INSERT,
+    "holdout_h5": INSERT,
+    "binary_brain_mask": "binary_brain_mask.nii.gz",
+    "nmm_mask_path": "~/spm12/tpm/labels_Neuromorphometrics.nii",
+    "nmm_mask_path_scaled": "nmm_mask_rescaled.nii"
 }
+
+
+```
 
 With the "Evaluate GB and LRP" notebook, the heatmap results and the summed scores per area can be calculated.
 The notebooks "Plotting result graphs" and "Plotting brain maps" can be used to calculate and plot the results according to the defined metrics and show the heatmaps of individual patient's brains and average heatmaps according to LRP and GB.
 
 
-```
 
 
 ## Citation
