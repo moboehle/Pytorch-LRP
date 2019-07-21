@@ -1,5 +1,4 @@
-# Visualizing evidence for Alzheimer's disease
-## Layer-wise relevance propagation for explaining deep neural network decisions in MRI-based Alzheimer’s disease classification
+# Layer-wise relevance propagation for explaining deep neural network decisions in MRI-based Alzheimer’s disease classification
 
 **Moritz Böhle, Fabian Eitel, Martin Weygandt, and Kerstin Ritter**
 
