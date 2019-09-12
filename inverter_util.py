@@ -118,7 +118,7 @@ class RelevancePropagator:
         elif isinstance(layer, torch.nn.Linear):
             return self.linear_inverse(layer, relevance).detach()
         else:
-            raise NotImplementedError("The network contains layers that"        
+            raise NotImplementedError("The network contains layers that"
                                       " are currently not supported {0:s}".format(str(layer)))
 
     def get_layer_fwd_hook(self, layer):
@@ -331,10 +331,7 @@ class RelevancePropagator:
 
             relevance_out *= m.in_tensor
 
-            sum_weights = torch.zeros([in_c, in_c * 4, 1]).to(self.device)
-            for i in range(in_c):
-                sum_weights[i, i::in_c] = 1
-            relevance_out = F.conv1d(relevance_out[:, :, None], weight=sum_weights, bias=None)
+            relevance_out = sum([relevance_out[:, i*in_c:(i+1)*in_c] for i in range(4)])
 
             del sum_weights, input_relevance, norm, rare_neurons, \
                 mask, new_norm, m.in_tensor, w, inv_w
