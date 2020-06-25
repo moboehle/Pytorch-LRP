@@ -333,7 +333,7 @@ class RelevancePropagator:
 
             relevance_out = sum([relevance_out[:, i*in_c:(i+1)*in_c] for i in range(4)])
 
-            del sum_weights, input_relevance, norm, rare_neurons, \
+            del input_relevance, norm, rare_neurons, \
                 mask, new_norm, m.in_tensor, w, inv_w
 
             return relevance_out
