@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  lrp:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    tty: true
+    command: bash -c "jupyter lab --port=8888 --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token='' --NotebookApp.password=''"
+    volumes:
+      - ..:/home/jovyan/work
+    ports:
+      - '7700:8888'
+    restart: unless-stopped
+    container_name: lrp
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
