@@ -46,6 +46,17 @@ model_prediction, heatmap = inn_model.innvestigate(in_tensor=data)
 
 `heatmap` contains the relevance heatmap. The methods should work for 2D and 3D images alike, see the MNIST example notebook or the LRP and GB evaluation notebook for an example with MRI images.
 
+### Docker
+
+To run [MNIST example.ipynb](./MNIST%20example.ipynb) in a Docker container (using only CPU) follow the steps below:
+
+```sh
+cd docker/
+docker-compose up --detach
+```
+
+Visit [localhost:7700](http://localhost:7700) in your browser to open Jupyter.
+
 ## Code Structure
 
 The repository consists of the general LRP wrapper ([innvestigator.py](innvestigator.py) and [inverter_util.py](inverter_util.py)), a simple example for applying the wrapper in the case of MNIST data, and the evaluation notebook for obtaining the heatmap results discussed in the article.
