@@ -10,14 +10,16 @@
 
 You can use the visualization methods in this repository on your own model (PyTorch; for a Keras implementation, see heatmapping.org) like this:
 
-    model = Net()
-    model.load_state_dict(torch.load("./mymodel"))
-    # Convert to innvestigate model
-    inn_model = InnvestigateModel(model, lrp_exponent=2,
-                                  method="e-rule",
-                                  beta=.5)
-    model_prediction, heatmap = inn_model.innvestigate(in_tensor=data)
-    
+```python
+model = Net()
+model.load_state_dict(torch.load("./mymodel"))
+# Convert to innvestigate model
+inn_model = InnvestigateModel(model, lrp_exponent=2,
+                                method="e-rule",
+                                beta=.5)
+model_prediction, heatmap = inn_model.innvestigate(in_tensor=data)
+```
+
 `heatmap` contains the relevance heatmap. The methods should work for 2D and 3D images alike, see the MNIST example notebook or the LRP and GB evaluation notebook for an example with MRI images.
 
 ## Code Structure
@@ -37,9 +39,9 @@ The MRI scans used for training are from the [Alzheimer Disease Neuroimaging Ini
 In order to run the code, standard pytorch packages and Python 3 are needed.
 Moreover, add a settings.py file to the repo, containing the data paths and so forth as follows:
 
-```
 Please use the example settings.py with more information.
 
+```python
 settings = {
     "model_path": INSERT,
     "data_path": INSERT,
