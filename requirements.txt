@@ -1,0 +1,4 @@
+torch==1.4.0
+torchvision==0.5.0
+nibabel==3.1.1
+tabulate==0.8.7
