@@ -391,7 +391,7 @@ class RelevancePropagator:
                 w = m.weight.pow(self.p).detach()
                 norm = conv_nd(m.in_tensor, weight=w, bias=None,
                                stride=m.stride, padding=m.padding,
-                               groups=m.groups)
+                               groups=m.groups, dilation=m.dilation)
 
                 norm = norm + torch.sign(norm) * self.eps
                 relevance_in[norm == 0] = 0
@@ -399,7 +399,7 @@ class RelevancePropagator:
                 relevance_out = inv_conv_nd(relevance_in/norm,
                                             weight=w, bias=None,
                                             padding=m.padding, stride=m.stride,
-                                            groups=m.groups)
+                                            groups=m.groups, dilation=m.dilation)
                 relevance_out *= m.in_tensor
                 del m.in_tensor, norm, w
                 return relevance_out
